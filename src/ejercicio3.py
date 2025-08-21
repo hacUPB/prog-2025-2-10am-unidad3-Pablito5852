@@ -21,7 +21,7 @@ if imc > 30 and imc < 34.9:
 if imc > 35 and imc < 39.9:
     print("imc obesidad II")
 if imc >= 40:
-    print("imc obesidad EXTREMA")
+    print("imc obesidad EXTREMA") 
 
 
 
