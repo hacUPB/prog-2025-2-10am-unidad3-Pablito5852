@@ -6,5 +6,4 @@ if residuo == 0:
     print(numero, " es par")
 #si no es impar
 else:
-    print(numero, " es impar")
-
+    print(numero, "es impar")

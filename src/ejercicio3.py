@@ -13,15 +13,16 @@ imc = peso/altura**2
 print("Tu IMC = ", imc)
 #Determinar la escala del imc
 if imc > 18.5 and imc < 24.9:
-    print("imc normal")
+    mensaje = "normal"
 if imc > 25 and imc < 29.9:
-    print("imc sobrepeso")
+    mensaje = "sobrepeso"
 if imc > 30 and imc < 34.9:
-    print("imc obesidad I")
+    mensaje = "obesidad I"
 if imc > 35 and imc < 39.9:
-    print("imc obesidad II")
+    mensaje = "obesidad II"
 if imc >= 40:
-    print("imc obesidad EXTREMA") 
+    mensaje = "obesidad EXTREMA"
 
+print(f"Paciente {nombre}, tiene un IMC de {imc:0.2f} y su condición es {mensaje}.") 
 
 
