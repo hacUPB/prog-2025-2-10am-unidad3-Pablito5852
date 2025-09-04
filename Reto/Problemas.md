@@ -1,6 +1,6 @@
 Problema 1: Simulación de Despegue (Fuerza de Sustentación)
 
-Un avión debe recorrer la pista durante 10 segundos para intentar despegar.
+Un  debe recorrer la pista durante 10 segundos para intentar despegar.
 En cada segundo, el piloto puede decidir acelerar, mantener o frenar.
 El programa calcula la sustentación en cada instante y determina si esta supera el peso del avión, lo que indica si logra despegar o no.
 
