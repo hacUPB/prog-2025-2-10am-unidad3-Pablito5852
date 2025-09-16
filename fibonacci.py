@@ -1,4 +1,4 @@
-numero = int(input("ingrese el numero de terminos de la serie"))
+numero = int(input("ingrese el numero de valores de la serie de fibonacci"))
 if numero <= 0:
     print("Por favor, ingrese el numero positivo")
 elif numero == 1:

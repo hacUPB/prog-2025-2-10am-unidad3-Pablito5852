@@ -6,12 +6,6 @@ def resta(a, b):
 	res = a - b
 	return res
 
-def max(num1, num2):
-	if num1 > num2:
-		maximo = num1
-	else:
-	    maximo = num2
-    
 	
 
 
@@ -29,6 +23,4 @@ print(f"{numero1} + {numero2} = {resultado_suma}")
 res_resta = resta(a, b)
 print(res_resta)
 
-num1 = 20
-num2 = 17
-print(max)
+
