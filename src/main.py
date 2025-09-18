@@ -23,8 +23,8 @@ def main():
                 fibonacci(num)
             case 3:
                 print("Imprime la tabla de miltiplicacion.")
-                num = int(input("ingrese el numero >> "))
-                tabla(num)
+                numero = int(input("ingrese el numero >> "))
+                tabla(numero)
             case 4:
                 break
             case _:
@@ -32,8 +32,5 @@ def main():
 
 
 
-
-if __name__ == "__main__":
+if _name_ == "_main_":
     main()
-
-

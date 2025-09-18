@@ -77,54 +77,51 @@ FIN
 ##  Problema 2: Combustible en vuelo
 
 **Enunciado:**  
-Un avión inicia con cierta cantidad de combustible. Durante 5 minutos de vuelo, el piloto decide si mantiene velocidad o asciende, lo que cambia el consumo. El programa verifica si el combustible alcanza para terminar el vuelo.
+Un avión inicia con cierta cantidad de combustible. Durante 5 minutos de vuelo. El programa verifica si el combustible alcanza para ascender.
 
 ###  Tabla de Variables
-| Variable | Significado | Unidad |
-|----------|-------------|--------|
-| combustible | Combustible inicial | litros o kg |
-| consumo_crucero | Consumo en vuelo nivelado | litros/s |
-| consumo_ascenso | Consumo en ascenso | litros/s |
-| tiempo_total | Duración total del vuelo (300 s) | s |
-| decision | Acción del piloto (0 = crucero, 1 = ascenso) | - |
+| Variable             | Significado                             | Unidad          |
+| -------------------- | --------------------------------------- | --------------- |
+| combustible\_inicial | Cantidad inicial de combustible         | litros o kg     |
+| combustible          | Combustible disponible en cada instante | litros o kg     |
+| consumo\_ascenso     | Consumo de combustible en ascenso       | litros/s o kg/s |
+| tiempo\_total        | Duración total del ascenso (5 min)      | segundos (s)    |
+| t                    | Tiempo transcurrido                     | segundos (s)    |
+
 
 ###  Fórmulas Matemáticas
 - Actualización de combustible:  
   
-  combustible = combustible - consumo \cdot \Delta t
+  combustible(t)=combustible(t−1)−consumo_ascenso⋅Δt
   
-- Condición:  
-  
+- Condición de agotamiento:
 
-  combustible \geq 0
+  combustible(t)≤0
   
+- Condicion de exito:
+
+  combustible(t)>0para todo t∈[0,tiempo_total]
+
 
 ###  Pseudocódigo Universal
 ```
 
 INICIO
-Definir combustible inicial
-Definir consumo\_crucero y consumo\_ascenso
-tiempo\_total = 300
+    Definir combustible_inicial
+    Definir consumo_ascenso
+    Definir tiempo_total = 300
+    combustible = combustible_inicial
 
-PARA t DESDE 1 HASTA tiempo\_total HACER
-LEER decision (0 = crucero, 1 = ascenso)
-SI decision = 0 ENTONCES
-combustible = combustible - consumo\_crucero
-SINO
-combustible = combustible - consumo\_ascenso
-FIN SI
+    PARA t DESDE 1 HASTA tiempo_total HACER
+        combustible = combustible - consumo_ascenso
 
-```
-  SI combustible <= 0 ENTONCES
-      IMPRIMIR "Se acabó el combustible en el segundo ", t
-      TERMINAR
-  FIN SI
-```
+        SI combustible <= 0 ENTONCES
+            IMPRIMIR "Se acabó el combustible en el segundo ", t
+            TERMINAR
+        FIN SI
+    FIN PARA
 
-FIN PARA
-
-IMPRIMIR "El avión completó el vuelo con ", combustible, " de combustible"
+    IMPRIMIR "El avión completó el ascenso con ", combustible, " de combustible"
 FIN
 
 ```
